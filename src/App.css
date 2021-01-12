@@ -54,12 +54,59 @@
 	border: 0px;
 	margin-top: 40px;
 }
-.col2{
+.col2 {
 	background-color: white;
-	height:216px;
+	height: 170px;
+	margin-top: 58px;
+}
+.form-group {
+	margin-left: 30px;
+	width: 190px;
+}
+.availability {
+	font-size: 19px;
+	margin-top: 40px;
+	margin-left: 30px;
+}
+.button2 {
+	color: white;
+	background-color: #3dc2e8;
+	border: 0px;
+	margin-left: 10px;
+	margin-top: 20px;
+}
+
+input {
+	font-family: FontAwesome;
+}
+.col3 {
+	background-image: url('./images/Group 61.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.text3 {
+	font-size: 11.5;
+	color: gray;
+	margin-top:30px;
+	margin-bottom:30px;
+}
+.text4 {
+	font-size: 36px;
+	font-weight: lighter;
+	margin-bottom:30px;
+}
+.text5 {
+	font-size: 13.5;
+	color: gray;
+	margin-top:30px;
+	margin-bottom:30px;
+}
+.div1{
+	margin-left: 45px;
+	margin-top:130px;
 }
 .Row {
-	height: 230px;
+	height: 791px;
 }
 .check {
 	border: 1px solid red;
