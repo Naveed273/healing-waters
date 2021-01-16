@@ -22,6 +22,7 @@ const Header = (props) => {
 				<Row className='top-row justify-content-center'>
 					<Col xs='auto' className='top-text'>
 						Ready to live a healthier and more balanced life? Call (858)
+						215-1645
 					</Col>
 				</Row>
 				<Row>
@@ -61,7 +62,6 @@ const Header = (props) => {
 									<NavLink href='/link-6'>Contact us</NavLink>
 								</NavItem>
 							</Nav>
-							<NavbarText>Simple Text</NavbarText>
 						</Collapse>
 					</Navbar>
 				</Row>

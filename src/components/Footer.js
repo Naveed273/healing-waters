@@ -1,88 +1,146 @@
 import React from 'react';
+import { Col, Container, Row } from 'reactstrap';
 
 function Footer(props) {
 	return (
 		<div className='footer'>
-			<div className='container'>
-				<div className='row justify-content-center'>
-					<div className='col-4 offset-1 col-sm-2'>
-						<h5>Links</h5>
+			<Container fluid>
+				<Row className=' footrow'>
+					<Col
+						xs={{ size: 4, offset: 2 }} 
+						sm={{ size: 3, offset: 0 }}
+						md={{ size: 2, offset: 1 }}
+						className=' col13a'
+					>
+						<img
+							src='assets/images/logo.png'
+							height='66'
+							width='160'
+							alt='Healing Waters'
+						/>
+						<p className='text12'>
+							Lorem Ipsum is simply dummy text of Lorem Ipsum has been the
+							industry's unknown printer took.
+						</p>
+					</Col>
+					<Col
+						xs={{ size: 4, offset: 3 }}
+						sm={{ size: 2, offset: 1 }}
+						md='2'
+						className=' col13b'
+					>
+						<h1 className='heading'>Useful Links</h1>
 						<ul className='list-unstyled'>
 							<li>
-								<a href='#'>Home</a>
+								<a href='#'>About Us</a>
 							</li>
 							<li>
-								<a href='#'>About</a>
+								<a href='#'>Contact Us</a>
 							</li>
 							<li>
-								<a href='#'>Menu</a>
+								<a href='#'>Services</a>
 							</li>
 							<li>
-								<a href='contactus.html'>Contact</a>
+								<a href='#'>Photo Gallery</a>
+							</li>
+							<li>
+								<a href='#'>Our Location</a>
 							</li>
 						</ul>
-					</div>
-					<div className='col-7 col-sm-5'>
-						<h5>Our Address</h5>
-						<address>
-							121, Clear Water Bay Road
-							<br />
-							Clear Water Bay, Kowloon
-							<br />
-							HONG KONG
-							<br />
-							<i className='fa fa-phone fa-lg'></i>: +852 1234 5678
-							<br />
-							<i className='fa fa-fax fa-lg'></i>: +852 8765 4321
-							<br />
-							<i className='fa fa-envelope fa-lg'></i>:{' '}
-							<a href='mailto:confusion@food.net'>confusion@food.net</a>
-						</address>
-					</div>
-					<div className='col-12 col-sm-4 align-self-center'>
-						<div className='text-center'>
-							<a
-								className='btn btn-social-icon btn-google'
-								href='http://google.com/+'
-							>
-								<i className='fa fa-google-plus'></i>
-							</a>
-							<a
-								className='btn btn-social-icon btn-facebook'
-								href='http://www.facebook.com/profile.php?id='
-							>
-								<i className='fa fa-facebook'></i>
-							</a>
-							<a
-								className='btn btn-social-icon btn-linkedin'
-								href='http://www.linkedin.com/in/'
-							>
-								<i className='fa fa-linkedin'></i>
-							</a>
-							<a
-								className='btn btn-social-icon btn-twitter'
-								href='http://twitter.com/'
-							>
-								<i className='fa fa-twitter'></i>
-							</a>
-							<a
-								className='btn btn-social-icon btn-google'
-								href='http://youtube.com/'
-							>
-								<i className='fa fa-youtube'></i>
-							</a>
-							<a className='btn btn-social-icon' href='mailto:'>
-								<i className='fa fa-envelope-o'></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div className='row justify-content-center'>
-					<div className='col-auto'>
-						<p>© Copyright 2018 Ristorante Con Fusion</p>
-					</div>
-				</div>
-			</div>
+					</Col>
+					<Col xs={{ size: 4, offset: 0 }} sm='2' md='2' className=' col13c'>
+						<h1 className='heading'>Services</h1>
+						<ul className='list-unstyled'>
+							<li>
+								<a href='#'>Weekend</a>
+							</li>
+							<li>
+								<a href='#'>One Week</a>
+							</li>
+							<li>
+								<a href='#'>Wellness & Spa</a>
+							</li>
+							<li>
+								<a href='#'>Rooms</a>
+							</li>
+							<li>
+								<a href='#'>Activities</a>
+							</li>
+						</ul>
+					</Col>
+					<Col
+						xs={{ size: 8, offset: 2 }}
+						sm={{ size: 4, offset: 0 }}
+						md='4'
+						className=' col13d'
+					>
+						<h1 className='heading1'>Instagram</h1>
+						<Row className=' row13d1'>
+							<Col xs='4' sm={{ size: 3 }} className=' col13d1'>
+								<img
+									className=' img13d1'
+									src='assets/tropical-relax-in-mauritius-PUR3S67.png'
+									height='75'
+									width='75'
+									alt='lotus'
+								/>
+							</Col>
+							<Col xs='4' sm={{ size: 3 }} className=' col13d1'>
+								<img
+									className=' img13d1'
+									src='assets/yoga-PHNNASZ.png'
+									height='75'
+									width='75'
+									alt='lotus'
+								/>
+							</Col>
+							<Col xs='4' sm={{ size: 3 }} className=' col13d1'>
+								<img
+									className=' img13d1'
+									src='assets/woman-enjoys-spa-in-geothermal-hot-spring-PJEKW7B.png'
+									height='75'
+									width='75'
+									alt='lotus'
+								/>
+							</Col>
+						</Row>
+						<Row>
+							<Col xs='4' sm={{ size: 3 }} className=' col13d1'>
+								<img
+									className=' img13d1'
+									src='assets/interior-of-wooden-sauna-bath-JTAWVG9.png'
+									height='75'
+									width='75'
+									alt='lotus'
+								/>
+							</Col>
+							<Col xs='4' sm={{ size: 3 }} className=' col13d1'>
+								<img
+									className=' img13d1'
+									src='assets/woman-enjoying-blue-lagoon-4YQXTEN.png'
+									height='75'
+									width='75'
+									alt='lotus'
+								/>
+							</Col>
+							<Col xs='4' sm={{ size: 3 }} className=' col13d1'>
+								<img
+									className=' img13d1'
+									src='assets/abstract-water-ripples-background-TCLT3RA.png'
+									height='75'
+									width='75'
+									alt='lotus'
+								/>
+							</Col>
+						</Row>
+					</Col>
+				</Row>
+				<Row className='top-row justify-content-center'>
+					<Col xs='auto' className='top-text'>
+						Healing Waters 2020 All Rights Reserved.
+					</Col>
+				</Row>
+			</Container>
 		</div>
 	);
 }
