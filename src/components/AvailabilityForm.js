@@ -1,8 +1,24 @@
 import React, { useState } from 'react';
-import { Row, Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import {
+	Row,
+	Col,
+	Button,
+	Form,
+	FormGroup,
+	Label,
+	Input,
+	Modal,
+	ModalHeader,
+	ModalBody,
+	ModalFooter,
+} from 'reactstrap';
+import ModalExample from './Modal';
 var DatePicker = require('reactstrap-date-picker');
 
-const AvailabilityForm = () => {
+const AvailabilityForm = (props) => {
+	const { buttonLabel, className } = props;
+	const [modal, setModal] = useState(false);
+	const toggle = () => setModal(!modal);
 	const initial_state = new Date().toISOString();
 	const [pickedRoom, setPickedRoom] = useState('');
 	const [checkedIn, setCheckedIn] = useState(initial_state);
@@ -30,9 +46,23 @@ const AvailabilityForm = () => {
 									size={13}
 									value={pickedRoom}
 									onChange={(e) => setPickedRoom(e.target.value)}
-									onFocus={() => console.log('I am onFocus')}
+									onClick={toggle}
 								></Input>
 							</FormGroup>
+							<Modal isOpen={modal} toggle={toggle} className={className}>
+								<ModalHeader toggle={toggle}>All Rooms</ModalHeader>
+								<ModalBody>
+									<p>all</p>
+								</ModalBody>
+								<ModalFooter>
+									<Button color='primary' onClick={toggle}>
+										Do Something
+									</Button>{' '}
+									<Button color='secondary' onClick={toggle}>
+										Cancel
+									</Button>
+								</ModalFooter>
+							</Modal>
 						</Col>
 						<Col
 							xs='10'
