@@ -8,7 +8,7 @@ import {
 	Nav,
 	NavItem,
 	NavLink,
-	NavbarText,
+	
 } from 'reactstrap';
 
 const Header = (props) => {
