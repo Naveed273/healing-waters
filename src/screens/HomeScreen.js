@@ -1,11 +1,14 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'reactstrap';
 import AvailabilityForm from '../components/AvailabilityForm';
+import Footer from '../components/Footer';
 import GallerySlides from '../components/GalleryCarousel';
+import Header from '../components/Header';
 class HomeScreen extends React.Component {
 	render() {
 		return (
 			<div>
+				<Header/>
 				<Container fluid>
 					<Row className='main-body'>
 						<Col>
@@ -244,6 +247,7 @@ class HomeScreen extends React.Component {
 					</Row>
 					<GallerySlides />
 				</Container>
+				<Footer/>
 			</div>
 		);
 	}

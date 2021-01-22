@@ -20,14 +20,14 @@ export default () => {
 				// nights,
 
 			});
-			console.log('This is roomstatusapi');
+			//console.log('This is roomstatusapi');
 			setRoomStatus(response.data.status);
 			
 
-			console.log(response);
+			//console.log(response);
 		} catch (err) {
 			setErrorMessage(err);
-			console.log('myError', err);
+			//console.log('myError', err);
 		}
 	};
 
