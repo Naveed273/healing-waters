@@ -8,10 +8,11 @@ import Stripe from './components/StripeApi';
 
 function App() {
 	return (
+		
 		<BrowserRouter>
 			
 			<Route path='/' component={HomeScreen} exact />
-			<Route path='/stripeApi' component={Stripe}  />
+			<Route path='/stripeApi/:room/:nights' component={Stripe}  />
 			
 		</BrowserRouter>
 	);

@@ -7,7 +7,7 @@ function Footer(props) {
 			<Container fluid>
 				<Row className=' footrow'>
 					<Col
-						xs={{ size: 4, offset: 2 }} 
+						xs={{ size: 4, offset: 2 }}
 						sm={{ size: 3, offset: 0 }}
 						md={{ size: 2, offset: 1 }}
 						className=' col13a'
@@ -75,28 +75,28 @@ function Footer(props) {
 						className=' col13d'
 					>
 						<h1 className='heading1'>Instagram</h1>
-						<Row className=' row13d1'>
-							<Col xs='4' sm={{ size: 3 }} className=' col13d1'>
+						<Row className=' row13d1 '>
+							<Col xs='3' sm={{ size: 2 }} className=' col13d1 '>
 								<img
-									className=' img13d1'
+									className=' img img-fluid'
 									src='assets/tropical-relax-in-mauritius-PUR3S67.png'
 									height='75'
 									width='75'
 									alt='lotus'
 								/>
 							</Col>
-							<Col xs='4' sm={{ size: 3 }} className=' col13d1'>
+							<Col xs='3' sm={{ size: 2 }} className=' col13d1 '>
 								<img
-									className=' img13d1'
+									className='  img img-fluid'
 									src='assets/yoga-PHNNASZ.png'
 									height='75'
 									width='75'
 									alt='lotus'
 								/>
 							</Col>
-							<Col xs='4' sm={{ size: 3 }} className=' col13d1'>
+							<Col xs='3' sm={{ size: 2 }} className=' col13d1 '>
 								<img
-									className=' img13d1'
+									className=' img img-fluid'
 									src='assets/woman-enjoys-spa-in-geothermal-hot-spring-PJEKW7B.png'
 									height='75'
 									width='75'
@@ -105,27 +105,27 @@ function Footer(props) {
 							</Col>
 						</Row>
 						<Row>
-							<Col xs='4' sm={{ size: 3 }} className=' col13d1'>
+							<Col xs='3' sm={{ size: 2}} className=' col13d1'>
 								<img
-									className=' img13d1'
+									className=' img img-fluid'
 									src='assets/interior-of-wooden-sauna-bath-JTAWVG9.png'
 									height='75'
 									width='75'
 									alt='lotus'
 								/>
 							</Col>
-							<Col xs='4' sm={{ size: 3 }} className=' col13d1'>
+							<Col xs='3' sm={{ size: 2 }} className=' col13d1'>
 								<img
-									className=' img13d1'
+									className=' img img-fluid'
 									src='assets/woman-enjoying-blue-lagoon-4YQXTEN.png'
 									height='75'
 									width='75'
 									alt='lotus'
 								/>
 							</Col>
-							<Col xs='4' sm={{ size: 3 }} className=' col13d1'>
+							<Col xs='3' sm={{ size: 2 }} className=' col13d1'>
 								<img
-									className=' img13d1'
+									className=' img img-fluid'
 									src='assets/abstract-water-ripples-background-TCLT3RA.png'
 									height='75'
 									width='75'

@@ -48,7 +48,7 @@ const AvailabilityForm = (props) => {
     const [programs, programsApi, errorMessage4] = usePrograms();
     console.log(programs);
 
-    function Program({pname, ptype, pservices}) {
+    const Program=({pname, ptype, pservices})=> {
         console.log('Program ftn', {pname, ptype, pservices});
         return (
             <Col
@@ -73,7 +73,7 @@ const AvailabilityForm = (props) => {
                         })}
 
                         <Button
-                            className='buttonfont mt-4 mx-4'
+                            className='buttonfont mt-4  ml-5'
                             color='primary'
                             onClick={() =>
                                 ptype === '7 DAYS'
@@ -89,7 +89,7 @@ const AvailabilityForm = (props) => {
                                         toggle3())
                             }
                         >
-                            Select Program
+                            Select
                         </Button>
                     </Card.Body>
                 </Card>
@@ -97,7 +97,7 @@ const AvailabilityForm = (props) => {
         );
     }
 
-    function ServicesPrograms(programs) {
+    const ServicesPrograms=(programs) => {
         //console.log('ServicesPrograms=',programs)
         return (
             <Row>
@@ -115,7 +115,7 @@ const AvailabilityForm = (props) => {
         );
     }
 
-    function Room({number, beds, capacity}) {
+    const Room=({number, beds, capacity})=> {
         const bed_or_beds = beds === 1 ? 'bed' : 'beds'
         const person_or_people = capacity === 1 ? 'person' : 'people'
         return (
@@ -151,7 +151,7 @@ const AvailabilityForm = (props) => {
         );
     }
 
-    function RoomsList(rooms) {
+    const RoomsList=(rooms)=> {
         return (
             <Row>
                 {rooms.map((room) => {
@@ -306,7 +306,7 @@ const AvailabilityForm = (props) => {
                 {roomStatus === 'available' ? (
                     <ModalBody>
                         Room is available.Do you want to reserve it?{'     '}
-                        <Link to={`/StripeApi`}>
+                        <Link to={`/StripeApi/${pickedRoom}/${nights}`}>
                             <Button
                                 className='buttonfont'
                                 color='primary'
