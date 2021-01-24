@@ -40,11 +40,11 @@ li {
 }
 
 li a {
-	color: black;
-	font-weight: lighter;
-	font-size: 0.999527098741408vw;
-	font-family: 'Segoe UI';
-	margin-bottom: 2%;
+    color: black;
+    font-weight: lighter;
+    font-size: 0.999527098741408vw;
+    font-family: 'Segoe UI';
+    margin-bottom: 2%;
 }
 
 .heading1 {
@@ -118,10 +118,10 @@ li a {
 }
 
 .text2 {
-	font-size: 1.499290648112112vw;
-	font-weight: lighter;
-	margin-top: 18px;
-	font-family: 'Segoe UI';
+    font-size: 1.499290648112112vw;
+    font-weight: lighter;
+    margin-top: 18px;
+    font-family: 'Segoe UI';
 }
 
 .button {
@@ -142,46 +142,55 @@ li a {
     margin-top: 1.5%;
     margin-left: 2%;
 }
-.wrapper { position: relative; }
-i.fa-calendar { position: absolute; top: 10px; left: 5px; }
+
+.wrapper {
+    position: relative;
+}
+
+i.fa-calendar {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+}
 
 .dateInput {
-  padding-left: 30px;
-  padding-right:1px;
-  max-width:69%;
-  height:38px;
-  color: gray;
-  border:1px solid rgb(226, 223, 223);
-  border-radius:5px;
+    padding-left: 30px;
+    padding-right: 1px;
+    max-width: 69%;
+    height: 38px;
+    color: gray;
+    border: 1px solid rgb(226, 223, 223);
+    border-radius: 5px;
 }
 
 .buttonfont {
-	font-size: 1.124467986084084vw;
-	font-family: 'Segoe UI';
+    font-size: 1.124467986084084vw;
+    font-family: 'Segoe UI';
 }
 
 .button2 {
-	color: white;
-	font-size: 1.124467986084084vw;
-	background-color: #3dc2e8;
-	border: 0px;
-	margin-left: 15%;
-	margin-top: 15%;
-	font-family: 'Segoe UI';
+    color: white;
+    font-size: 1.124467986084084vw;
+    background-color: #3dc2e8;
+    border: 0px;
+    margin-left: 15%;
+    margin-top: 15%;
+    font-family: 'Segoe UI';
 }
+
 .check-button {
-	color: white;
-	font-size: 1.124467986084084vw;
-	background-color: #3dc2e8;
-	border: 0px;
-	margin-left: 2%;
-	/* margin-top: 16%; */
-	font-family: 'Segoe UI';
-	
+    color: white;
+    font-size: 1.124467986084084vw;
+    background-color: #3dc2e8;
+    border: 0px;
+    margin-left: 2%;
+    /* margin-top: 16%; */
+    font-family: 'Segoe UI';
+
 }
 
 input {
-	font-family: FontAwesome,'Segoe UI';
+    font-family: FontAwesome, 'Segoe UI';
 }
 
 .col3 {
@@ -214,30 +223,30 @@ input {
 }
 
 .text4 {
-	font-size: 2.998581296224224vw;
-	font-weight: lighter;
-	margin-bottom: 0.9370566550700699vw;
-	border: 1px;
-	border-color: #707070;
-	font-family: 'Segoe UI';
+    font-size: 2.998581296224224vw;
+    font-weight: lighter;
+    margin-bottom: 0.9370566550700699vw;
+    border: 1px;
+    border-color: #707070;
+    font-family: 'Segoe UI';
 }
 
 .text5 {
-	font-size: 1.124467986084084vw;
-	font-weight: lighter;
-	color: gray;
-	margin-top: 0.9370566550700699vw;
-	margin-bottom: 0.9370566550700699vw;
-	font-family: 'Segoe UI';
+    font-size: 1.124467986084084vw;
+    font-weight: lighter;
+    color: gray;
+    margin-top: 0.9370566550700699vw;
+    margin-bottom: 0.9370566550700699vw;
+    font-family: 'Segoe UI';
 }
 
 .text5a {
-	font-size: 1.124467986084084vw;
-	font-weight: lighter;
+    font-size: 1.124467986084084vw;
+    font-weight: lighter;
 
-	margin-top: 0.9370566550700699vw;
-	margin-bottom: 0.9370566550700699vw;
-	font-family: 'Segoe UI';
+    margin-top: 0.9370566550700699vw;
+    margin-bottom: 0.9370566550700699vw;
+    font-family: 'Segoe UI';
 }
 
 .col5 {
@@ -258,34 +267,34 @@ input {
 }
 
 .col7a {
-	margin-top: 4.9370566550700699vw;
-	margin-bottom: 0.6247044367133799vw;
-	border: 1px solid #3dc2e8;
-	box-shadow: 0px 0px 60px 0px #e3e7e9;
+    margin-top: 4.9370566550700699vw;
+    margin-bottom: 0.6247044367133799vw;
+    border: 1px solid #3dc2e8;
+    box-shadow: 0px 0px 60px 0px #e3e7e9;
 
-	padding-left: 2.5615246411541537vw;
-	padding-top: 5.43587440192359vw;
-	padding-bottom: 3.43587440192359vw;
-	height: 20.043261157065062vw;
+    padding-left: 2.5615246411541537vw;
+    padding-top: 5.43587440192359vw;
+    padding-bottom: 3.43587440192359vw;
+    height: 20.043261157065062vw;
 }
 
 .col7b {
-	margin-top: 7.9370566550700699vw;
-	margin-bottom: 1.6247044367133799vw;
-	border: 1px solid #3dc2e8;
-	box-shadow: 0px 0px 60px 0px #e3e7e9;
+    margin-top: 7.9370566550700699vw;
+    margin-bottom: 1.6247044367133799vw;
+    border: 1px solid #3dc2e8;
+    box-shadow: 0px 0px 60px 0px #e3e7e9;
 
-	padding-left: 3.0615246411541537vw;
-	padding-top: 5.43587440192359vw;
-	padding-bottom: 3.43587440192359vw;
-	height: 20.043261157065062vw;
+    padding-left: 3.0615246411541537vw;
+    padding-top: 5.43587440192359vw;
+    padding-bottom: 3.43587440192359vw;
+    height: 20.043261157065062vw;
 }
 
 .text6 {
-	font-size: 1.374349760769436vw;
-	margin-bottom: 1.8741133101401397vw;
-	color: #545454;
-	font-family: 'Segoe UI';
+    font-size: 1.374349760769436vw;
+    margin-bottom: 1.8741133101401397vw;
+    color: #545454;
+    font-family: 'Segoe UI';
 }
 
 .text7 {
@@ -320,25 +329,26 @@ input {
 }
 
 .text8 {
-	margin-left: 39%;
-	margin-right: 38%;
-	font-family: 'Segoe UI';
+    margin-left: 39%;
+    margin-right: 38%;
+    font-family: 'Segoe UI';
 }
 
 .text9 {
-	font-size: 2.998581296224224vw;
-	font-weight: lighter;
-	margin-bottom: 0.9370566550700699vw;
-	border: 1px;
-	border-color: #707070;
-	margin-left: 30%;
-	margin-right: 15%;
-	font-family: 'Segoe UI';
+    font-size: 2.998581296224224vw;
+    font-weight: lighter;
+    margin-bottom: 0.9370566550700699vw;
+    border: 1px;
+    border-color: #707070;
+    margin-left: 30%;
+    margin-right: 15%;
+    font-family: 'Segoe UI';
 }
 
 .text10 {
-	margin-left: 22%;
-	margin-right: 0%;font-family: 'Segoe UI';
+    margin-left: 22%;
+    margin-right: 0%;
+    font-family: 'Segoe UI';
 }
 
 .img6 {
@@ -369,13 +379,14 @@ input {
 }
 
 .text11 {
-	font-size: 3.7482266202802794vw;
-	font-weight: lighter;
-	margin-top: 3%;
-	margin-bottom: 3%;font-family: 'Segoe UI';
-	margin-left: 33%;
-	margin-right: 30%;
-	color: white;
+    font-size: 3.7482266202802794vw;
+    font-weight: lighter;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-family: 'Segoe UI';
+    margin-left: 33%;
+    margin-right: 30%;
+    color: white;
 }
 
 .img8 {
@@ -467,10 +478,31 @@ input {
 
 
 .App {
-	font-family: 'Segoe UI';	
+    font-family: 'Segoe UI';
 }
 
+.spacer {
+    margin-top: 5rem;
+}
 
-.spacer{
-    height: 2.5rem;
+.service {
+    display: flex;
+    align-content: space-evenly;
+}
+
+.service-item {
+    display: flex;
+    border: 1px solid rgba(149, 162, 167, 0.91);
+    border-radius: 0.7rem;
+    padding: 0.2rem;
+}
+
+.container__PriceIcon {
+    display: flex;
+    justify-content: space-between;
+}
+
+.price__PriceIcon {
+    font-size: 16px;
+    font-weight: bold;
 }

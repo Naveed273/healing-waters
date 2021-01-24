@@ -5,13 +5,10 @@ export default () => {
 	const [errorMessage, setErrorMessage] = useState('');
 	const servicesApi = async () => {
 		try {
-			console.log('this is program api');
 			const response = await backendApi.get('/services');
 			setServices(response.data);
-			console.log(response);
 		} catch (err) {
 			setErrorMessage(err);
-			console.log('error', err);
 		}
 	};
 
