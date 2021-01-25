@@ -6,17 +6,24 @@ import {Card, Col, Container} from 'react-bootstrap';
 import room_img from '../assets/room_img.png';
 import Button from '@material-ui/core/Button';
 import ServiceTransferList from './ServiceTransferList';
-import useRoomsList from '../hooks/useRoomsList';
 
 toast.configure();
 
 const Stripe = (props) => {
     const programs = props.location.state.programs;
-    const services = props.location.state.services;
+    let services = props.location.state.services;
     const selectedRoomNumber = props.match.params.room;
     const selectedProgramType = `${props.match.params.nights} DAYS`;
 
     const programDefaultServices = programs.find((program) => program.type === selectedProgramType).services
+
+
+    const hashService = ({id, name, price}) => `${id} ${name} ${price}`;
+
+    const hashSet = new Set(programDefaultServices.map(hashService));
+
+    services = services.filter(p => !hashSet.has(hashService(p)));
+
 
     const [room] = React.useState({
         number: '2',
@@ -25,23 +32,6 @@ const Stripe = (props) => {
         capacity: 2,
     });
 
-    //this callback ftn gets access to the token and addresses(billing and shipping address)
-    // async function handleToken(token, addresses) {
-    //     const response = await axios.post(
-    //         'https://ry7v05l6on.sse.codesandbox.io/checkout',
-    //         {token, room}
-    //     );
-    //     const {status} = response.data;
-    //     console.log('Response:', response.data);
-    //     //if we just want to show the status of payment.
-    //     if (status === 'success') {
-    //         //type means to make notification green.
-    //         toast('Success! Check email for details', {type: 'success'});
-    //     } else {
-    //         toast('Something went wrong', {type: 'error'});
-    //     }
-    // }
-    console.log({services, programDefaultServices});
     return (
         <Container>
             <Col className='flex-row align-items-center' lg={8}>
@@ -69,8 +59,9 @@ const Stripe = (props) => {
                             className='float-right'
                             variant={'contained'}
                             color={'primary'}
+                            onClick={console.log("Services", {services, programDefaultServices})}
                         >
-                            Pay Now
+                            Check Out
                         </Button>
                     </Card.Footer>
                 </Card>

@@ -48,19 +48,11 @@ function union(a, b) {
 
 const ServiceTransferList = ({allServices, programDefaultServices}) => {
 
-    const hashService = ({id, name, price}) => `${id} ${name} ${price}`;
-
-    const hashSet = new Set(programDefaultServices.map(hashService));
-
-    allServices = allServices.filter(p => !hashSet.has(hashService(p)));
-
-
     const classes = useStyles();
     const [checked, setChecked] = React.useState([]);
     const [left, setLeft] = React.useState(allServices);
     const [right, setRight] = React.useState(programDefaultServices);
-    const [prices, setPrices] = React.useState([]);
-    const [totalPrice, setTotalPrice] = React.useState(0);
+
 
     const leftChecked = intersection(checked, left);
     const rightChecked = intersection(checked, right);
@@ -71,11 +63,9 @@ const ServiceTransferList = ({allServices, programDefaultServices}) => {
 
         if (currentIndex === -1) {
             newChecked.push(value);
-            console.log(value);
         } else {
             newChecked.splice(currentIndex, 1);
         }
-
         setChecked(newChecked);
     };
     const numberOfChecked = (items) => intersection(checked, items).length;
@@ -158,47 +148,55 @@ const ServiceTransferList = ({allServices, programDefaultServices}) => {
         </Card>
     );
     return (
-        <Grid
-            container
-            spacing={2}
-            justify='center'
-            alignItems='center'
-            className={classes.root}
-        >
-            <Grid item>{customList('Available Services', left)}</Grid>
-            <Grid item>
-                <Grid container direction='column' alignItems='center'>
-                    <Button
-                        variant='outlined'
-                        size='small'
-                        className={classes.button}
-                        onClick={handleCheckedRight}
-                        disabled={leftChecked.length === 0}
-                        aria-label='move selected right'
-                    >
-                        &gt;
-                    </Button>
-                    <Button
-                        variant='outlined'
-                        size='small'
-                        className={classes.button}
-                        onClick={handleCheckedLeft}
-                        disabled={rightChecked.length === 0}
-                        aria-label='move selected left'
-                    >
-                        &lt;
-                    </Button>
+        <div>
+            <Grid
+                container
+                spacing={2}
+                justify='center'
+                alignItems='center'
+                className={classes.root}
+            >
+                <Grid item>{customList('Available Services', left)}</Grid>
+                <Grid item>
+                    <Grid container direction='column' alignItems='center'>
+                        <Button
+                            variant='outlined'
+                            size='small'
+                            className={classes.button}
+                            onClick={handleCheckedRight}
+                            disabled={leftChecked.length === 0}
+                            aria-label='move selected right'
+                        >
+                            &gt;
+                        </Button>
+                        <Button
+                            variant='outlined'
+                            size='small'
+                            className={classes.button}
+                            onClick={handleCheckedLeft}
+                            disabled={rightChecked.length === 0}
+                            aria-label='move selected left'
+                        >
+                            &lt;
+                        </Button>
+                    </Grid>
                 </Grid>
+                <Grid item>{customList('Program Default Services', right)}</Grid>
             </Grid>
-            <Grid item>{customList('Program Default Services', right)}</Grid>
-            <div className='float-right'>
-                Total Price: &nbsp;
-                <Button variant={'outlined'} color={'secondary'}>
-                    {setPrices(right.map((service) => service.price))}
-                    {setTotalPrice(totalPrice + prices.map(price => parseInt(price)))}
-                </Button>
+            <div className="Checkout">
+                <div className="total_price">
+                    Total Price: &nbsp;
+                    <Button variant={'outlined'} color={'secondary'}>
+                        &#36;&nbsp;{right.reduce((result, current) => result + current.price, 0)}
+                    </Button>
+                </div>
+                {/*<div className="checkout_button">*/}
+                {/*    <Button variant={'contained'} color={'primary'}>*/}
+                {/*        Checkout*/}
+                {/*    </Button>*/}
+                {/*</div>*/}
             </div>
-        </Grid>
+        </div>
     );
 };
 export default ServiceTransferList;
