@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
@@ -13,9 +13,7 @@ import Divider from '@material-ui/core/Divider';
 import { Tooltip, Zoom } from '@material-ui/core';
 import PriceIcon from './PriceIcon';
 
-import useServices from '../hooks/useServices';
-import usePrograms from '../hooks/usePrograms';
-import useRoomsList from '../hooks/useRoomsList';
+
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -49,25 +47,14 @@ function union(a, b) {
 	return [...a, ...not(b, a)];
 }
 
-export default function ServiceTransferList({ selectedProgramType, ...props }) {
-	const [services] = useServices();
-	const [programs] = usePrograms();
-	const [rooms] = useRoomsList();
-	const selectedProgram = programs.filter(
-		(program) => program.type === selectedProgramType
-    );
-   // console.log({ selectedProgram });
-   const programDefaultServices = selectedProgram.map((selectedProgram) => {
-        return selectedProgram.services;
-    })
-    console.log({ services, programDefaultServices });
+const ServiceTransferList = ({ allServices, programDefaultServices }) => {
+	
 
- 
 	const classes = useStyles();
 	const [checked, setChecked] = React.useState([]);
-	const [left, setLeft] = React.useState(services);
+	const [left, setLeft] = React.useState(allServices);
 	const [right, setRight] = React.useState(programDefaultServices);
-//console.log({services,programDefaultServices})
+
 	const leftChecked = intersection(checked, left);
 	const rightChecked = intersection(checked, right);
 
@@ -163,7 +150,7 @@ export default function ServiceTransferList({ selectedProgramType, ...props }) {
 			</List>
 		</Card>
 	);
-    console.log({ left, right });
+	//console.log({ left, right });
 	return (
 		<Grid
 			container
@@ -197,7 +184,8 @@ export default function ServiceTransferList({ selectedProgramType, ...props }) {
 					</Button>
 				</Grid>
 			</Grid>
-			<Grid item>{customList('Program Default', right)}</Grid>
+			<Grid item>{customList('Program Default Services', right)}</Grid>
 		</Grid>
 	);
-}
+};
+export default ServiceTransferList;

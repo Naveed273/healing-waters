@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
@@ -14,15 +14,22 @@ import useRoomsList from '../hooks/useRoomsList';
 toast.configure();
 
 const Stripe = (props) => {
-	// console.log('stripeProps=>', props);
+	const programs = props.location.state.programs;
+	const services = props.location.state.services;
 	const selectedRoomNumber = props.match.params.room;
 	const selectedProgramType = `${props.match.params.nights} DAYS`;
-	//console.log({ selectedProgramType, selectedRoomNumber });
-	const [services] = useServices();
-	const [programs] = usePrograms();
+
 	const [rooms] = useRoomsList();
-	// console.log('services=>', services);
-	// console.log('programs=>', programs);
+	const selectedProgram = programs.filter(
+		(program) => program.type === selectedProgramType
+	);
+	
+	const programDefaultServices1 = selectedProgram.map((selectedProgram) => {
+		return selectedProgram.services.map((service) => {
+			return service;
+		});
+	});
+	const [programDefaultServices] = programDefaultServices1;
 
 	const [room] = React.useState({
 		number: '2',
@@ -47,7 +54,7 @@ const Stripe = (props) => {
 	//         toast('Something went wrong', {type: 'error'});
 	//     }
 	// }
-
+	console.log({ services, programDefaultServices });
 	return (
 		<Container>
 			<Col className='flex-row align-items-center' lg={8}>
@@ -62,10 +69,13 @@ const Stripe = (props) => {
 							</strong>
 						</Card.Title>
 						<Card.Subtitle>
-							<ServiceTransferList
-								services={services}
-								selectedProgramType={selectedProgramType}
-							/>
+							{!services && !programDefaultServices ? null : (
+								<ServiceTransferList
+									allServices={services}
+									programDefaultServices={programDefaultServices}
+								/>
+							)}
+
 							<div className='float-right'>
 								Total Price: &nbsp;
 								<Button variant={'outlined'} color={'secondary'}>
