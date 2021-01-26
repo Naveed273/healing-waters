@@ -1,19 +1,5 @@
 import React,{useState} from 'react';
-import { toast } from 'react-toastify';
-import {
-	
-	CardText,
-	
-	Form,
-	FormGroup,
-	Input,
-	Label,
-	Modal,
-	ModalBody,
-	ModalFooter,
-	ModalHeader,
-	Row,
-} from 'reactstrap';
+import {toast} from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 import {Card, Col, Container} from 'react-bootstrap';
@@ -26,9 +12,7 @@ import { Link } from 'react-router-dom';
 toast.configure();
 
 const Stripe = (props) => {
-     const { className } = props;
-    const [modal1, setModal1] = useState(false);
-    const toggle1 = () => setModal1(!modal1);
+    
     const programs = props.location.state.programs;
     let services = props.location.state.services;
     const selectedRoomNumber = props.match.params.room;
@@ -69,6 +53,7 @@ const Stripe = (props) => {
 										//this ftn is being send as a prop to be called from the child component with an argument(argument=total price which is needed to received from this child)
 										totalPrice={(price) => {
 											SetTotPrice(price);
+											
 										}}
 										//this ftn is being send as a prop to be called from the child component with an argument(argument=total price which is needed to received from this child)
 
@@ -81,50 +66,28 @@ const Stripe = (props) => {
 							</Card.Subtitle>
 						</Card.Body>
 						<Card.Footer>
-							{/*              <Link
-                            to={{
-                                pathname: `/checkOut`,
-                                state: {
-                                    programType: selectedProgramType,
-                                    extraServices: selectedServices,
-                                    roomNumber: selectedRoomNumber,
-                                    totalAmount: totPrice,
-                                },
-                            }}
-                        >
-                            <Button
-                                className='float-right'
-                                variant={'contained'}
-                                color={'primary'}
-                            >
-                                Check Out
-                            </Button>
-                        </Link>  */}
-							<Button
-								className='float-right'
-								variant={'contained'}
-                            color={'primary'}
-                            onClick={toggle1}
+							<Link
+								to={{
+									pathname: `/checkOut`,
+									state: {
+										programType: selectedProgramType,
+										extraServices:selectedServices,
+										roomNumber:selectedRoomNumber,
+										totalAmount:totPrice
+									},
+								}}
 							>
-								Check Out
-							</Button>
+								<Button
+									className='float-right'
+									variant={'contained'}
+									color={'primary'}
+								>
+									Check Out
+								</Button>
+							</Link>
 						</Card.Footer>
 					</Card>
 				</Col>
-				<Modal size='lg' isOpen={modal1} toggle={toggle1} className={className}>
-					<ModalHeader toggle={toggle1}>hi</ModalHeader>
-					<ModalBody>how</ModalBody>
-					<ModalFooter>
-						<Button
-							color='danger'
-							onClick={() => {
-								toggle1();
-							}}
-						>
-							Cancel
-						</Button>
-					</ModalFooter>
-				</Modal>
 			</Container>
 		);
 };

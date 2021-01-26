@@ -103,13 +103,13 @@ const ResetButton = ({ onClick }) => (
 	</button>
 );
 
-const CheckoutForm = ({ programType,extraServices,roomNumber,totalAmount }) => {
+const CheckoutForm = (props) => {
 	//console.log('checoutform',{ programType,extraServices,roomNumber,totalAmount });
 	// const [paymentStatus, paymentApi, errorMessage] = usePayment();
-	const programType1 = programType;
-	const roomNumber1 = roomNumber;
-	const extraServices1 = extraServices;
-    const totalAmount1 = totalAmount;
+	const programType1 = props.location.state.programType;
+	const roomNumber1 = props.location.state.roomNumber;
+	const extraServices1 = props.location.state.extraServices;
+    const totalAmount1 = props.location.state.totalAmount;
     const stripeKey = 'pk_test_51FJW6JEjkdsuq2ybrjKRjxRrl9iBW0LB67BhJuWA5TY1JxEZwncXTocqEhFsp9GHNf5jQ0pxvBRlgqXUTrNRLLZA00vFJyXvof';
 	const stripe = useStripe();
 	const elements = useElements();
@@ -243,7 +243,7 @@ const CheckoutForm = ({ programType,extraServices,roomNumber,totalAmount }) => {
 			</fieldset>
 			{error && <ErrorMessage>{error.message}</ErrorMessage>}
 			<SubmitButton processing={processing} error={error} disabled={!stripe}>
-				{`Pay  $${totalAmount}`}
+				{`Pay  $${totalAmount1}`}
 			</SubmitButton>
 		</form>
 	);
@@ -264,23 +264,24 @@ const stripePromise = loadStripe(
 	'pk_test_51FJW6JEjkdsuq2ybrjKRjxRrl9iBW0LB67BhJuWA5TY1JxEZwncXTocqEhFsp9GHNf5jQ0pxvBRlgqXUTrNRLLZA00vFJyXvof'
 );
 
-const CheckOut = ({ location }) => {
-    console.log({location})
+const CheckOut = (props) => {
+    // console.log({location})
     
-    const programType = location.state.programType;
-    const extraServices = location.state.extraServices;
-    const roomNumber = location.state.roomNumber;
-    const totalAmount = location.state.totalAmount;
+    // const programType = location.state.programType;
+    // const extraServices = location.state.extraServices;
+    // const roomNumber = location.state.roomNumber;
+    // const totalAmount = location.state.totalAmount;
 	//console.log( {programType,extraServices,roomNumber,totalAmount} );
 
 	return (
 		<div className='AppWrapper'>
 			<Elements stripe={stripePromise} options={ELEMENTS_OPTIONS}>
-				<CheckoutForm
-					programType={programType}
-					extraServices={extraServices}
-					roomNumber={roomNumber}
-					totalAmount={totalAmount}
+                <CheckoutForm
+                    location={props.location}
+					// programType={programType}
+					// extraServices={extraServices}
+					// roomNumber={roomNumber}
+					// totalAmount={totalAmount}
 				/>
 			</Elements>
 		</div>
