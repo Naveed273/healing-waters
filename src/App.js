@@ -4,14 +4,14 @@ import './App.css';
 import HomeScreen from "./screens/HomeScreen";
 import Stripe from './components/StripeApi'
 import {BrowserRouter, Route} from "react-router-dom";
-import CheckOut from './components/CheckOut';
+import Checkout from './components/Checkout';
 
 function App() {
     return (
 			<BrowserRouter>
 				<Route path='/' component={HomeScreen} exact />
 				<Route path='/stripeApi/:room/:nights' component={Stripe} />
-				<Route path='/checkOut' component={CheckOut} />
+				<Route path='/checkout' component={Checkout} />
 			</BrowserRouter>
 		);
 }

@@ -310,7 +310,7 @@ const AvailabilityForm = (props) => {
                         Room is available.Do you want to reserve it?{'     '}
                         <Link
                             to={{
-                                pathname: `/StripeApi/${pickedRoom}/${nights}`,
+                                pathname: `/stripeApi/${pickedRoom}/${nights}`,
                                 state: {
                                     programs: programs,
                                     services: services,

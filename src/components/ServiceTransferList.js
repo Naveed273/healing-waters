@@ -208,11 +208,6 @@ const ServiceTransferList = ({
 						{handleTotalPrice(right)}
 					</Button>
 				</div>
-				{/*<div className="checkout_button">*/}
-				{/*    <Button variant={'contained'} color={'primary'}>*/}
-				{/*        Checkout*/}
-				{/*    </Button>*/}
-				{/*</div>*/}
 			</div>
 		</div>
 	);

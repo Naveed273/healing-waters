@@ -1,35 +1,28 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import backendApi from '../api/backendApi';
+
 export default () => {
-	const [roomStatus, setRoomStatus] = useState('');
-	const [errorMessage, setErrorMessage] = useState('');
-	const show = true;
-	const roomStatusApi = async ({
-		pickedRoom,
-		checkedIn,
-		checkedOut,
-		nights,
-		
-	}) => {
-		console.log('this roomstatus');
-		try {
-			const response = await backendApi.post(`/rooms/${pickedRoom}/status`, {
-				// pickedRoom,
-				check_in: checkedIn,
-				check_out: checkedOut,
-				// nights,
+    const [roomStatus, setRoomStatus] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+    const show = true;
+    const roomStatusApi = async ({
+                                     pickedRoom,
+                                     checkedIn,
+                                     checkedOut,
 
-			});
-			//console.log('This is roomstatusapi');
-			setRoomStatus(response.data.status);
-			
+                                 }) => {
+        try {
+            const response = await backendApi.post(`/rooms/${pickedRoom}/status`, {
+                check_in: checkedIn,
+                check_out: checkedOut,
 
-			//console.log(response);
-		} catch (err) {
-			setErrorMessage(err);
-			//console.log('myError', err);
-		}
-	};
+            });
+            setRoomStatus(response.data.status);
 
-	return [roomStatus, roomStatusApi, errorMessage];
+        } catch (err) {
+            setErrorMessage(err);
+        }
+    };
+
+    return [roomStatus, roomStatusApi, errorMessage];
 };
