@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import useRoomsList from '../hooks/useRoomsList';
-import useRoomDetails from '../hooks/useRoomDetails';
+
 import useRoomStatus from '../hooks/useRoomStatus';
 import usePrograms from '../hooks/usePrograms';
 import {Card} from 'react-bootstrap';
@@ -26,8 +26,6 @@ import {Link} from 'react-router-dom';
 import CustomInput from './CustomInput';
 import useServices from '../hooks/useServices';
 
-//var DatePicker = require('reactstrap-date-picker');
-
 const AvailabilityForm = (props) => {
     const {className} = props;
     const [modal1, setModal1] = useState(false);
@@ -42,15 +40,14 @@ const AvailabilityForm = (props) => {
     const [checkedOut, setCheckedOut] = useState(new Date());
     const [nights, setNights] = useState('');
 
-    const [rooms, searchApi, errorMessage1] = useRoomsList();
-    const [roomDatail, roomDetailApi, errorMessage2] = useRoomDetails();
-    const [roomStatus, roomStatusApi, errorMessage3] = useRoomStatus();
-    const [programs, programsApi, errorMessage4] = usePrograms();
-    const [services, servicesApi, errorMessage5] = useServices();
-    console.log(programs);
+    const [rooms, searchApi] = useRoomsList();
+   
+    const [roomStatus, roomStatusApi] = useRoomStatus();
+    const [programs, programsApi] = usePrograms();
+    const [services] = useServices();
+    
 
-    const Program = ({pname, ptype, pservices}) => {
-        console.log('Program ftn', {pname, ptype, pservices});
+    const Program = ({ ptype, pservices}) => {
         return (
             <Col
                 xs={{size: 10, offset: 1}}
@@ -58,23 +55,25 @@ const AvailabilityForm = (props) => {
                 lg={{size: 4, offset: 0}}
                 className='mb-4 mx-lg-5'
             >
-                <Card style={{width: '14rem'}}>
-                    <Card.Img variant='top' src={room_img}/>
-                    <Card.Body className='pl-4'>
-                        <Card.Title>{`${ptype} PROGRAM`} </Card.Title>
-
+                <Card style={{width: '14.5rem'}}>
+                    <Card.Img variant='top' src={room_img} width='100%'/>
+                    <Card.Header style={{fontWeight: 'bold'}}>
+                        <span>{`${ptype} PROGRAM`}</span>
                         {pservices.map((service) => {
                             return (
                                 <div key={service.id}>
-                                    <Card.Text className='my-0 mx-4'>
-                                        {`${service.name} for $${service.price}`}{' '}
-                                    </Card.Text>
+                                    <CardText>
+                                        <small className='text-muted'>
+                                            {service.name} for <strong>&#36;{service.price}</strong>
+                                        </small>
+                                    </CardText>
                                 </div>
                             );
                         })}
-
+                        <br/>
                         <Button
-                            className='buttonfont mt-4  ml-5'
+                            className='mr-lg-4 w-100'
+                            variant='primary'
                             color='primary'
                             onClick={() =>
                                 ptype === '7 DAYS'
@@ -90,16 +89,16 @@ const AvailabilityForm = (props) => {
                                         toggle3())
                             }
                         >
-                            Select
+                            Select Program
                         </Button>
-                    </Card.Body>
+                    </Card.Header>
                 </Card>
             </Col>
         );
     };
 
     const ServicesPrograms = (programs) => {
-        //console.log('ServicesPrograms=',programs)
+       
         return (
             <Row>
                 {programs.map((program) => {
@@ -281,7 +280,7 @@ const AvailabilityForm = (props) => {
                             <Button
                                 type='submit'
                                 value='CHECK NOW'
-                                className='check-button buttonfont '
+                                className='check-button buttonfont'
                             >
                                 CHECK NOW
                             </Button>
@@ -318,7 +317,7 @@ const AvailabilityForm = (props) => {
                             }}
                         >
                             <Button
-                                className='buttonfont'
+                                className='check-button buttonfont'
                                 color='primary'
                                 onClick={() => {
                                     toggle2();
@@ -346,7 +345,7 @@ const AvailabilityForm = (props) => {
                 </ModalFooter>
             </Modal>
             <Modal size='lg' isOpen={modal3} toggle={toggle3} className={className}>
-                <ModalHeader toggle={toggle3}>Our two services programs</ModalHeader>
+                <ModalHeader toggle={toggle3}>Our Programs</ModalHeader>
                 <ModalBody>{ServicesPrograms(programs)}</ModalBody>
                 <ModalFooter>
                     <Button

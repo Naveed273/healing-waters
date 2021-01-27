@@ -13,7 +13,7 @@ export default () => {
         }
     };
 
-    //we want to run the arrow ftn only when the component is rendered for the first time.
+    
     useEffect(() => {
         programsApi();
     }, []);

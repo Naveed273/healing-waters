@@ -197,7 +197,7 @@ const ServiceTransferList = ({
 				<Grid item>{customList('Program Default Services', right)}</Grid>
 			</Grid>
 			<div className='Checkout'>
-				<div className='total_price'>
+				<div className='total_price  '>
 					Total Price: &nbsp;
 					<Button
 						variant={'outlined'}
