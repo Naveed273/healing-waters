@@ -180,185 +180,185 @@ const AvailabilityForm = (props) => {
         toggle2();
     };
     return (
-        <Row className=' align-items-end'>
-            <Col xs={{size: 3}}/>
-            <Col className=' col2 ' xs={{size: 9}}>
-                <h1 className='availability ml-lg-5 pl-lg-5'>Check Availability :</h1>
-                <Form onSubmit={SubmitHandler} inline>
-                    <Row>
-                        <Col xs='8' sm='3' md='4' lg={{size: 3, offset: 1}} xl='2'>
-                            <FormGroup>
-                                <Label for='pickRoom'>Pick room</Label>
+			<Row className=' align-items-end'>
+				<Col xs={{ size: 3 }} />
+				<Col className=' col2 ' xs={{ size: 9 }}>
+					<h1 className='availability ml-lg-5 pl-lg-5'>Check Availability :</h1>
+					<Form onSubmit={SubmitHandler} inline>
+						<Row>
+							<Col xs='8' sm='3' md='4' lg={{ size: 3, offset: 1 }} xl='2'>
+								<FormGroup>
+									<Label for='pickRoom'>Pick room</Label>
 
-                                <Input
-                                    type='text'
-                                    name='text'
-                                    id='pickRoom'
-                                    placeholder='&#xf21d;   Pick a room'
-                                    size={13}
-                                    value={pickedRoom}
-                                    onChange={(e) => setPickedRoom(e.target.value)}
-                                    onClick={() => {
-                                        searchApi();
-                                        toggle1();
-                                    }}
-                                />
-                            </FormGroup>
-                        </Col>
-                        <Col
-                            xs='6'
-                            sm={{size: 5, offset: 3}}
-                            md={{size: 4, offset: 2}}
-                            lg={{size: 3, offset: 3}}
-                            xl={{size: 2, offset: 0}}
-                        >
-                            <FormGroup>
-                                <Label for='checkedIn'>Check In</Label>
-                                <DatePicker
-                                    id='checkedIn'
-                                    selected={checkedIn}
-                                    onChange={(date) => {
-                                        setCheckedIn(date);
-                                    }}
-                                    minDate={new Date()}
-                                    customInput={<CustomInput/>}
-                                />
-                            </FormGroup>
-                        </Col>
-                        <Col
-                            xs='7'
-                            sm='5'
-                            md='4'
-                            lg={{size: 3, offset: 1}}
-                            xl={{size: 2, offset: 0}}
-                        >
-                            <FormGroup>
-                                <Label for='checkedOut'>Check Out</Label>
-                                <DatePicker
-                                    id='checkedOut'
-                                    selected={checkedOut}
-                                    onChange={(date) => {
-                                        setCheckedOut(date);
-                                    }}
-                                    minDate={new Date()}
-                                    customInput={<CustomInput/>}
-                                />
-                            </FormGroup>
-                        </Col>
-                        <Col
-                            xs='8'
-                            sm={{size: 3, offset: 1}}
-                            md={{size: 3, offset: 2}}
-                            lg={{size: 3, offset: 3}}
-                            xl={{size: 2, offset: 0}}
-                        >
-                            <FormGroup>
-                                <Label for='nights'>Nights:</Label>
-                                <Input
-                                    type='text'
-                                    name='text'
-                                    id='nights'
-                                    size={13}
-                                    value={nights}
-                                    onChange={(e) => setNights(e.target.value)}
-                                    placeholder='&#xf186; 7 Nights'
-                                    onClick={() => {
-                                        programsApi();
-                                        toggle3();
-                                    }}
-                                />
-                            </FormGroup>
-                        </Col>
-                        <Col
-                            xs={{size: 6, offset: 3}}
-                            sm={{size: 6, offset: 4}}
-                            md={{size: 4, offset: 4}}
-                            lg={{size: 6, offset: 4}}
-                            xl={{size: 2, offset: 0}}
-                            className='mt-xl-4'
-                        >
-                            <Button
-                                type='submit'
-                                value='CHECK NOW'
-                                className='check-button buttonfont'
-                            >
-                                CHECK NOW
-                            </Button>
-                        </Col>
-                    </Row>
-                </Form>
-            </Col>
-            <Modal size='lg' isOpen={modal1} toggle={toggle1} className={className}>
-                <ModalHeader toggle={toggle1}>All Rooms</ModalHeader>
-                <ModalBody>{RoomsList(rooms)}</ModalBody>
-                <ModalFooter>
-                    <Button
-                        color='danger'
-                        onClick={() => {
-                            toggle1();
-                        }}
-                    >
-                        Cancel
-                    </Button>
-                </ModalFooter>
-            </Modal>
-            <Modal size='lg' isOpen={modal2} toggle={toggle2} className={className}>
-                <ModalHeader toggle={toggle2}>Room Status</ModalHeader>
-                {roomStatus === 'available' ? (
-                    <ModalBody>
-                        Room is available.Do you want to reserve it?{'     '}
-                        <Link
-                            to={{
-                                pathname: `/stripeApi/${pickedRoom}/${nights}`,
-                                state: {
-                                    programs: programs,
-                                    services: services,
-                                },
-                            }}
-                        >
-                            <Button
-                                className='check-button buttonfont'
-                                color='primary'
-                                onClick={() => {
-                                    toggle2();
-                                }}
-                            >
-                                Click Here!
-                            </Button>
-                        </Link>
-                    </ModalBody>
-                ) : (
-                    <ModalBody>
-                        'Sorry!this room will not be avaiable for your specified time,
-                        please pick another room'{' '}
-                    </ModalBody>
-                )}
-                <ModalFooter>
-                    <Button
-                        color='danger'
-                        onClick={() => {
-                            toggle2();
-                        }}
-                    >
-                        Cancel
-                    </Button>
-                </ModalFooter>
-            </Modal>
-            <Modal size='lg' isOpen={modal3} toggle={toggle3} className={className}>
-                <ModalHeader toggle={toggle3}>Our Programs</ModalHeader>
-                <ModalBody>{ServicesPrograms(programs)}</ModalBody>
-                <ModalFooter>
-                    <Button
-                        color='danger'
-                        onClick={() => {
-                            toggle3();
-                        }}
-                    >
-                        Cancel
-                    </Button>
-                </ModalFooter>
-            </Modal>
-        </Row>
-    );
+									<Input
+										type='text'
+										name='text'
+										id='pickRoom'
+										placeholder='&#xf21d;   Pick a room'
+										size={13}
+										value={pickedRoom}
+										onChange={(e) => setPickedRoom(e.target.value)}
+										onClick={() => {
+											searchApi();
+											toggle1();
+										}}
+									/>
+								</FormGroup>
+							</Col>
+							<Col
+								xs='6'
+								sm={{ size: 5, offset: 3 }}
+								md={{ size: 4, offset: 2 }}
+								lg={{ size: 3, offset: 3 }}
+								xl={{ size: 2, offset: 0 }}
+							>
+								<FormGroup>
+									<Label for='checkedIn'>Check In</Label>
+									<DatePicker
+										id='checkedIn'
+										selected={checkedIn}
+										onChange={(date) => {
+											setCheckedIn(date);
+										}}
+										minDate={new Date()}
+										customInput={<CustomInput disable={false} />}
+									/>
+								</FormGroup>
+							</Col>
+							<Col
+								xs='7'
+								sm='5'
+								md='4'
+								lg={{ size: 3, offset: 1 }}
+								xl={{ size: 2, offset: 0 }}
+							>
+								<FormGroup>
+									<Label for='checkedOut'>Check Out</Label>
+									<DatePicker
+										id='checkedOut'
+										selected={checkedOut}
+										onChange={(date) => {
+											setCheckedOut(date);
+										}}
+										minDate={new Date()}
+										customInput={<CustomInput disable={true} />}
+									/>
+								</FormGroup>
+							</Col>
+							<Col
+								xs='8'
+								sm={{ size: 3, offset: 1 }}
+								md={{ size: 3, offset: 2 }}
+								lg={{ size: 3, offset: 3 }}
+								xl={{ size: 2, offset: 0 }}
+							>
+								<FormGroup>
+									<Label for='nights'>Nights:</Label>
+									<Input
+										type='text'
+										name='text'
+										id='nights'
+										size={13}
+										value={nights}
+										onChange={(e) => setNights(e.target.value)}
+										placeholder='&#xf186; 7 Nights'
+										onClick={() => {
+											programsApi();
+											toggle3();
+										}}
+									/>
+								</FormGroup>
+							</Col>
+							<Col
+								xs={{ size: 6, offset: 3 }}
+								sm={{ size: 6, offset: 4 }}
+								md={{ size: 4, offset: 4 }}
+								lg={{ size: 6, offset: 4 }}
+								xl={{ size: 2, offset: 0 }}
+								className='mt-xl-4'
+							>
+								<Button
+									type='submit'
+									value='CHECK NOW'
+									className='check-button buttonfont'
+								>
+									CHECK NOW
+								</Button>
+							</Col>
+						</Row>
+					</Form>
+				</Col>
+				<Modal size='lg' isOpen={modal1} toggle={toggle1} className={className}>
+					<ModalHeader toggle={toggle1}>All Rooms</ModalHeader>
+					<ModalBody>{RoomsList(rooms)}</ModalBody>
+					<ModalFooter>
+						<Button
+							color='danger'
+							onClick={() => {
+								toggle1();
+							}}
+						>
+							Cancel
+						</Button>
+					</ModalFooter>
+				</Modal>
+				<Modal size='lg' isOpen={modal2} toggle={toggle2} className={className}>
+					<ModalHeader toggle={toggle2}>Room Status</ModalHeader>
+					{roomStatus === 'available' ? (
+						<ModalBody>
+							Room is available.Do you want to reserve it?{'     '}
+							<Link
+								to={{
+									pathname: `/stripeApi/${pickedRoom}/${nights}`,
+									state: {
+										programs: programs,
+										services: services,
+									},
+								}}
+							>
+								<Button
+									className='check-button buttonfont'
+									color='primary'
+									onClick={() => {
+										toggle2();
+									}}
+								>
+									Click Here!
+								</Button>
+							</Link>
+						</ModalBody>
+					) : (
+						<ModalBody>
+							'Sorry!this room will not be avaiable for your specified time,
+							please pick another room'{' '}
+						</ModalBody>
+					)}
+					<ModalFooter>
+						<Button
+							color='danger'
+							onClick={() => {
+								toggle2();
+							}}
+						>
+							Cancel
+						</Button>
+					</ModalFooter>
+				</Modal>
+				<Modal size='lg' isOpen={modal3} toggle={toggle3} className={className}>
+					<ModalHeader toggle={toggle3}>Our Programs</ModalHeader>
+					<ModalBody>{ServicesPrograms(programs)}</ModalBody>
+					<ModalFooter>
+						<Button
+							color='danger'
+							onClick={() => {
+								toggle3();
+							}}
+						>
+							Cancel
+						</Button>
+					</ModalFooter>
+				</Modal>
+			</Row>
+		);
 };
 export default AvailabilityForm;

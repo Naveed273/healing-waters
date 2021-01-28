@@ -5,10 +5,10 @@ function Footer(props) {
 	return (
 		<div className='footer'>
 			<Container fluid>
-				<Row className=' footrow'>
+				<Row className=' footrow pt-4'>
 					<Col
-						xs={{ size: 4, offset: 2 }}
-						sm={{ size: 3, offset: 0 }}
+						xs={{ size: 8, offset: 2 }}
+						sm={{ size: 5, offset: 1 }}
 						md={{ size: 2, offset: 1 }}
 						className=' col13a'
 					>
@@ -24,13 +24,13 @@ function Footer(props) {
 						</p>
 					</Col>
 					<Col
-						xs={{ size: 4, offset: 3 }}
-						sm={{ size: 2, offset: 1 }}
-						md='2'
+						xs={{ size: 4, offset: 2 }}
+						sm={{ size: 5, offset: 1 }}
+						md={{ size: 2, offset: 1 }}
 						className=' col13b'
 					>
-						<h1 className='heading'>Useful Links</h1>
-						<ul className='list-unstyled'>
+						<h1 className='heading mb-4'>Useful Links</h1>
+						<ul className='list-unstyled '>
 							<li>
 								<a href='#'>About Us</a>
 							</li>
@@ -48,8 +48,13 @@ function Footer(props) {
 							</li>
 						</ul>
 					</Col>
-					<Col xs={{ size: 4, offset: 0 }} sm='2' md='2' className=' col13c'>
-						<h1 className='heading'>Services</h1>
+					<Col
+						xs={{ size: 4, offset: 0 }}
+						sm={{ size: 5, offset: 1 }}
+						md={{ size: 2, offset: 0 }}
+						className=' col13c'
+					>
+						<h1 className='heading mb-4'>Services</h1>
 						<ul className='list-unstyled'>
 							<li>
 								<a href='#'>Weekend</a>
@@ -70,13 +75,19 @@ function Footer(props) {
 					</Col>
 					<Col
 						xs={{ size: 8, offset: 2 }}
-						sm={{ size: 4, offset: 0 }}
-						md='4'
-						className=' col13d'
+						sm={{ size: 5, offset: 1 }}
+						//sm={{ size: , offset: 1 }}
+						md={{ size: 4, offset: 0 }}
+						className=' '
 					>
-						<h1 className='heading1'>Instagram</h1>
-						<Row className=' row13d1 '>
-							<Col xs='3' sm={{ size: 2 }} className=' col13d1 '>
+						<h1 className='heading1 mb-4'>Instagram</h1>
+						<Row className=' row13d1 pl-2 '>
+							<Col
+								xs='3'
+								sm={{ size: 3 }}
+								lg={{ size: 2 }}
+								className=' col13d1 p-1 '
+							>
 								<img
 									className=' img img-fluid'
 									src='assets/tropical-relax-in-mauritius-PUR3S67.png'
@@ -85,7 +96,12 @@ function Footer(props) {
 									alt='lotus'
 								/>
 							</Col>
-							<Col xs='3' sm={{ size: 2 }} className=' col13d1 '>
+							<Col
+								xs='3'
+								sm={{ size: 3 }}
+								lg={{ size: 2 }}
+								className=' col13d1 p-1 '
+							>
 								<img
 									className='  img img-fluid'
 									src='assets/yoga-PHNNASZ.png'
@@ -94,7 +110,12 @@ function Footer(props) {
 									alt='lotus'
 								/>
 							</Col>
-							<Col xs='3' sm={{ size: 2 }} className=' col13d1 '>
+							<Col
+								xs='3'
+								sm={{ size: 3 }}
+								lg={{ size: 2 }}
+								className=' col13d1 p-1 '
+							>
 								<img
 									className=' img img-fluid'
 									src='assets/woman-enjoys-spa-in-geothermal-hot-spring-PJEKW7B.png'
@@ -104,8 +125,13 @@ function Footer(props) {
 								/>
 							</Col>
 						</Row>
-						<Row>
-							<Col xs='3' sm={{ size: 2}} className=' col13d1'>
+						<Row className=' pl-2'>
+							<Col
+								xs='3'
+								sm={{ size: 3 }}
+								lg={{ size: 2 }}
+								className=' col13d1 p-1'
+							>
 								<img
 									className=' img img-fluid'
 									src='assets/interior-of-wooden-sauna-bath-JTAWVG9.png'
@@ -114,7 +140,12 @@ function Footer(props) {
 									alt='lotus'
 								/>
 							</Col>
-							<Col xs='3' sm={{ size: 2 }} className=' col13d1'>
+							<Col
+								xs='3'
+								sm={{ size: 3 }}
+								lg={{ size: 2 }}
+								className=' col13d1 p-1'
+							>
 								<img
 									className=' img img-fluid'
 									src='assets/woman-enjoying-blue-lagoon-4YQXTEN.png'
@@ -123,7 +154,12 @@ function Footer(props) {
 									alt='lotus'
 								/>
 							</Col>
-							<Col xs='3' sm={{ size: 2 }} className=' col13d1'>
+							<Col
+								xs='3'
+								sm={{ size: 3 }}
+								lg={{ size: 2 }}
+								className=' col13d1 p-1 '
+							>
 								<img
 									className=' img img-fluid'
 									src='assets/abstract-water-ripples-background-TCLT3RA.png'

@@ -13,6 +13,8 @@ const CustomInput = (props) => {
 				className='dateInput'
 				value={props.value}
 				type='text'
+				disabled={props.disable}
+				
 			/>
 		</div>
 	);
